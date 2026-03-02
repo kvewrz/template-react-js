@@ -1,0 +1,34 @@
+.overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 99.1vw;
+    height: 100%;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.modal {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 6px;
+    max-width: 500px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    position: absolute;
+     box-sizing: border-box;
+}
+
+.modal__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal__header span {
+    cursor: pointer;
+}

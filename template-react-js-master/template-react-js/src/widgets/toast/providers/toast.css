@@ -1,0 +1,41 @@
+.toast__container {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1100;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.toast {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    background-color: rgb(180, 174, 173);
+    color: #fff;
+    font-size: 1rem;
+}
+
+.toast-success {
+    background-color: teal;
+}
+
+.toast-info {
+    background-color: rgb(59, 71, 236);
+}
+
+.toast-error {
+    background-color: tomato;
+}
+
+.toast button {
+    background-color: black;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 0 0.25rem;
+    font-size: 1.2rem ;
+}
