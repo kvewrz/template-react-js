@@ -46,7 +46,8 @@ function Users() {
         return <Loader />
     }
   return (
-  <form onSubmit={handleSubmit(onUpdateUser)}>
+    <div>
+        <form onSubmit={handleSubmit(onUpdateUser)}>
     {error && <span>{error}</span>}
     <label>
         Name
@@ -70,6 +71,8 @@ function Users() {
     </label>
     <button>Update</button>
   </form>
+    </div>
+  
   )
 }
 

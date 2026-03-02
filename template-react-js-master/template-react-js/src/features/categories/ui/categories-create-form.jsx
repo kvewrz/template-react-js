@@ -28,7 +28,7 @@ function CategoriesCreateForm() {
       reset()
      showToast('удачно была создана')
     }catch(error){
-      showToast('запись не была создана' + error.message , 'error')
+      showToast('запись не была создана' + error , 'error')
     }
   }
   if(loading){

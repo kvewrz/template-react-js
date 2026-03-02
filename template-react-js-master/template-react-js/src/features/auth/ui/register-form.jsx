@@ -63,7 +63,7 @@ function RegisterForm() {
          {errors.confirmPassword && <span>{errors.confirmPassword.message}</span>}
         <input type="password" {...register('confirmPassword')} id='confirmPassword' />
     </label>
-    <button type='submit'>Registration</button>
+    <button type='submit' disabled={loading}>{loading ?  'регестрируем' : 'зарегестрироваться' }</button>
    </form>
   )
 }

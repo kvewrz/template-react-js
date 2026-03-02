@@ -26,7 +26,7 @@ function CategoriesUpdateForm({category}) {
           reset()
           showToast('удачно обновилось')
         }catch(error){
-            showToast('не удалось обновить' + error.message + 'error')
+            showToast('не удалось обновить' + error + 'error')
         }
     }
     if(loading){

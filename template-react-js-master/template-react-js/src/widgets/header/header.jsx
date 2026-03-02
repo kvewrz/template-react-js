@@ -1,3 +1,4 @@
+import { memo } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import {Link, useNavigate} from 'react-router'
 import './header.css'
@@ -5,7 +6,8 @@ import AuthApi from '../../features/auth/api/auth-api'
 import { logoutSuccess } from '../../features/auth/models/auth-slice'
 import Loader from '../loader/loader'
 
-function Header() {
+
+const  Header = memo (() => {
     const { user , loading , error } = useSelector((state) => state.auth)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -48,6 +50,6 @@ function Header() {
     </nav>  
    
   )
-}
-
+})
+Header.displayName ="Header"
 export default Header

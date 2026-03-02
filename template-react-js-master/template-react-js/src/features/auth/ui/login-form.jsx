@@ -55,7 +55,7 @@ function LoginForm() {
         {errors.password && <span>{errors.password.message}</span>}
         <input type="password" {...register('password')} id='password' />
     </label>
-    <button type='submit'>Login</button>
+    <button type='submit' disabled={loading}>{loading ? 'входим' : 'войти' }</button>
    </form>
   )
 }
