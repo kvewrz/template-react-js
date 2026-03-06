@@ -14,7 +14,7 @@ static async cancelOrder(id){
     return data
 }
 static async  rejectOrder(id , rejectComment){
-    const {data} = await AxiosInstance.patch(`/orders/${id}/reject` , rejectComment)
+    const {data} = await AxiosInstance.patch(`/orders/${id}/reject` , {rejectComment})
     return data
 }
 }

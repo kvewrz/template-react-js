@@ -26,7 +26,7 @@ function OrdersList() {
     }
     const rejectOrder  = async (id) => {
         try{
-        await dispatch(fetchRejectedOrder(id)).unwrap()
+        await dispatch(fetchRejectedOrder({id:id , rejectComment:''})).unwrap()
         showToast('удачно')
         }catch(error){
         showToast('не удачно'+ error)

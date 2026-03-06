@@ -7,6 +7,7 @@ import { useToast } from '../../../widgets/toast/hooks/use-toast'
 import { fetchCategories } from '../../categories/models/categories-thunks'
 import schema from '../models/ads-schema'
 import { fetchCreateAds } from '../models/ads-thunks'
+import './ads.css'
 
 function AdsFormCreate() {
     const {
@@ -38,7 +39,7 @@ function AdsFormCreate() {
         return <Loader />
     }
   return (
-    <div>
+    <div className='ads-form'>
         {error && <span>{error}</span>}
       <h2>Create Ads</h2>
       <form onSubmit={handleSubmit(onCreate)}>

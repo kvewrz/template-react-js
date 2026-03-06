@@ -7,7 +7,7 @@ import Modal from '../../../widgets/modal/modal'
 import { useToast } from '../../../widgets/toast/hooks/use-toast'
 import { fetchFavoriteAdd, fetchRemoveFavorite } from '../../favorites/models/favorites-thunks'
 import { fetchCreateOrder } from '../../orders/models/orders-thunks'
-
+import './ads.css'
 
 
 
@@ -51,27 +51,29 @@ const AdsList = memo(({ad}) => {
       } 
     }
   return (
-    <div>
+    <div className='ads'>
+      <img src={ad?.imageUrl || 'https://ir.ozone.ru/s3/multimedia-z/6765519599.jpg'} alt="" />
+      <hr />
       <Link to={`/ads/${ad.id}`}>
       <h1>Title:{ad.title}</h1>
       </Link>
       <h2>Description: {ad.description}</h2>
       <h2>Price: {ad.price}</h2>
       <h2>Category:{ad.Category.name}</h2>
-      <img src={ad?.imageUrl} alt="" />
+      
       {user && (user.id === ad.userId)?(
         <>
-        <button onClick={handleToogle}>{isFavorite? '❤️' : "🖤"}</button>
-        <button onClick={onRemove}>Remove</button>
-      <button onClick={() => setEditOpen(true)}>Update</button>
+        <button className='favorite-button'  onClick={handleToogle}>{isFavorite? '❤️' : "🖤"}</button>
+        <button className='remove-button' onClick={onRemove}>Remove</button>
+      <button className='update-button' onClick={() => setEditOpen(true)}>Update</button>
       <Modal  open={editOpen} onClose={handleClose} title='форма для обновления'>
         <AdsFormUpdate  ad={ad} />
       </Modal>
         </>
       ):(
         <>
-          <button onClick={handleToogle}>{isFavorite ? '❤️' : "🖤"}</button>
-        <button onClick={makeOrder}>заказать</button>
+          <button className='favorite-button' onClick={handleToogle}>{isFavorite ? '❤️' : "🖤"}</button>
+        <button className='order-button' onClick={makeOrder}>заказать</button>
         </>
       )
     }

@@ -1,5 +1,26 @@
 .header{
     display: flex;
-    gap: 20px;
-    
+  gap: 30px;
+}
+a{
+    color: rgb(35, 22, 22);
+    box-shadow: ;
+    text-decoration: none;
+    transition: 0.6s;
+}
+a:hover{
+    color: azure;
+}
+.header{
+  margin: auto;
+
+}
+.header button{
+    border-radius: 20px;
+    padding: 8px;
+    transition: 0.6s;
+}
+.header button:hover{
+  background: black;
+  color: white;
 }

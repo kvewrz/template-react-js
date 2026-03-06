@@ -31,12 +31,13 @@ function FavoritesList() {
         <div key={favorite.id} className="favorite-item">
             {error && <span className="error">{error}</span>}
             <img src={favorite?.imageUrl || 'https://avatars.mds.yandex.net/i?id=609397dca0c9b274d8129e39c1f25346f3e78fe4-11270328-images-thumbs&n=13'} alt="" />
+            <hr />
             <div className="item-info">
-                <h2>{favorite?.Category?.name}</h2>
                 <h1>{favorite?.title}</h1>
-                <p>{favorite?.description}</p>
-                <h2>{favorite?.price?.toLocaleString()} ₽</h2>
-                <button onClick={() => removeFavorites(favorite.id)}>Remove</button>
+                <h2>{favorite?.Category?.name}</h2>
+                <h2>{favorite?.description}</h2>
+                <h2>{favorite?.price} ₽</h2>
+                <button className="remove-favorites" onClick={() => removeFavorites(favorite.id)}>Remove</button>
             </div>
         </div>
     ))}

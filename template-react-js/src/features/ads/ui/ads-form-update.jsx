@@ -7,7 +7,7 @@ import { useToast } from '../../../widgets/toast/hooks/use-toast'
 import { fetchCategories } from '../../categories/models/categories-thunks'
 import schema from '../models/ads-schema'
 import { fetchUpdateAds } from '../models/ads-thunks'
-
+import './ads.css'
 
 
 
@@ -41,7 +41,7 @@ function AdsFormUpdate({ad}) {
         return <Loader />
     }
   return (
-    <div>
+    <div className='ads-form'>
       <h2>Update Ads</h2>
       <form onSubmit={handleSubmit(onUpdate)}>
         {error && <span>{error}</span>}
@@ -52,12 +52,12 @@ function AdsFormUpdate({ad}) {
         </label>
         <label>
             Description
-             {errors.title && <span>{errors.title.message}</span>}
+             {errors.description && <span>{errors.description.message}</span>}
             <input type="text" {...register('description')} id="description" />
         </label>
         <label>
             Price 
-             {errors.title && <span>{errors.title.message}</span>}
+             {errors.price && <span>{errors.price.message}</span>}
             <input type="text" {...register('price')} id="price"/>
         </label>
         <label>
